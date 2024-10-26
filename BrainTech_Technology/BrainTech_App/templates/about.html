@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <!-- ** Basic Page Needs ** -->
+    <meta charset="utf-8" />
+    <title>BrainTech Technology |About</title>
+
+    <!-- ** Mobile Specific Metas ** -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Agency HTML Template" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
+    <meta name="author" content="Themefisher" />
+    <meta name="generator" content="Themefisher Html5 Agency Template v1.0" />
+
+    <!-- Load static tag -->
+    {% load static %}
+
+    <!-- bootstrap.min css -->
+    <link
+      rel="stylesheet"
+      href="{% static 'plugins/bootstrap/bootstrap.min.css' %}"
+    />
+    <!-- Icon Font Css -->
+    <link
+      rel="stylesheet"
+      href="{% static 'plugins/themify/css/themify-icons.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'plugins/fontawesome/css/all.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'plugins/magnific-popup/magnific-popup.css' %}"
+    />
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'plugins/slick/slick-theme.css' %}"
+    />
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="{% static 'images/favicon.png' %}"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body>
+    {% include 'header.html' %}
+    <section class="page-title bg-1">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="block text-center">
+              <span class="text-white">About Us</span>
+              <h1 class="text-capitalize mb-4 text-lg">Our Company</h1>
+              <ul class="list-inline">
+                <li class="list-inlin e-item">
+                  <a href="{% url 'home' %} " class="text-white">Home</a>
+                </li>
+                <li class="list-inline-item">
+                  <span class="text-white">/</span>
+                </li>
+                <li class="list-inline-item text-white-50">About Us</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section About Start -->
+    <section class="section about-2 position-relative">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="about-item pr-3 mb-5 mb-lg-0">
+              <span class="h6 text-color">What we are</span>
+              <h2 class="mt-3 mb-4 position-relative content-title">
+                We are dynamic team of creative people
+              </h2>
+              <p class="mb-5">
+                We provide consulting services in the area of IFRS and
+                management reporting, helping companies to reach their highest
+                level. We optimize business processes, making them easier.
+              </p>
+              <a href=" {% url 'service' %}" class="btn btn-main btn-round-full"
+                >Get started</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="about-item-img">
+              <img
+                loading="lazy"
+                src="{% static 'images/about/home-7.jpg' %}"
+                alt="about-image"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section About End -->
+
+    <section class="about-info section pt-0">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="about-info-item mb-4 mb-lg-0">
+              <h3 class="mb-3">
+                <span class="text-color mr-2 text-md">01.</span>Our Mission
+              </h3>
+              <p>
+                "Empowering Your Digital Presence, One Line of Code at a Time.
+                At BrainTech Technology, we are on a mission to redefine the
+                online landscape through innovative web development. Crafting
+                seamless, user-centric experiences that transcend the ordinary,
+                we transform ideas into interactive realities. Join us on this
+                journey as we code the future of the web, where innovation meets
+                functionality, and your digital success becomes our shared
+                triumph."
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="about-info-item mb-4 mb-lg-0">
+              <h3 class="mb-3">
+                <span class="text-color mr-2 text-md">02.</span>Vision
+              </h3>
+              <p>
+                "At BrainTech Technology, we envision a digital world where
+                every online presence is a masterpiece of innovation and
+                functionality. Our commitment is to lead the forefront of web
+                development, redefining the boundaries of what's possible in the
+                digital realm. We aspire to be the architects of captivating and
+                seamless online experiences, empowering businesses and
+                individuals to thrive in the ever-evolving digital landscape.
+                With a relentless pursuit of excellence, we strive to shape the
+                future of web technology and inspire a new era of digital
+                brilliance."
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="about-info-item mb-4 mb-lg-0">
+              <h3 class="mb-3">
+                <span class="text-color mr-2 text-md">03.</span>Core Values
+              </h3>
+              <p>
+                "At BrainTech Technology, our core values are the foundation of
+                our success. We are driven by a commitment to innovation,
+                excellence, and integrity. Our team thrives on collaboration,
+                transparency, and delivering exceptional results. We embrace
+                challenges as opportunities for growth and remain dedicated to
+                creating impactful digital solutions that exceed expectations.
+                These values guide us in our mission to build meaningful,
+                long-lasting partnerships and elevate the digital landscape with
+                every project we undertake."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Team Start -->
+    <section class="section team">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-7 text-center">
+            <div class="section-title">
+              <span class="h6 text-color">Our Team</span>
+              <h2 class="mt-3 content-title">Meet Our Team of Professionals</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="team-item-wrap mb-5">
+              <div class="team-item position-relative">
+                <img
+                  src="{% static 'images/team/team-1.png' %}"
+                  alt="team"
+                  class="img-fluid"
+                />
+                <div class="team-img-hover"></div>
+              </div>
+              <div class="team-item-info">
+                <h5 class="mb-0">Ravi Prakash Choudhary</h5>
+                <span>Founder / CEO</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="team-item-wrap mb-5">
+              <div class="team-item position-relative">
+                <img
+                  src="{% static 'images/team/team-2.png' %}"
+                  alt="team"
+                  class="img-fluid"
+                />
+                <div class="team-img-hover"></div>
+              </div>
+              <div class="team-item-info">
+                <h5 class="mb-0">Ritesh Kr Thakur</h5>
+                <span>Chief Technical Officer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="team-item-wrap mb-5">
+              <div class="team-item position-relative">
+                <img
+                  src="{% static 'images/team/team-3.png' %}"
+                  alt="team"
+                  class="img-fluid"
+                />
+                <div class="team-img-hover"></div>
+              </div>
+              <div class="team-item-info">
+                <h5 class="mb-0">Deepak Kumar Singh</h5>
+                <span>Hr Head</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="team-item-wrap mb-5">
+              <div class="team-item position-relative">
+                <img
+                  src="{% static 'images/team/team-4.png' %}"
+                  alt="team"
+                  class="img-fluid"
+                />
+                <div class="team-img-hover"></div>
+              </div>
+              <div class="team-item-info">
+                <h5 class="mb-0">Vishnu Kumar Ghosh</h5>
+                <span>BackEnd Developer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="team-item-wrap mb-5">
+              <div class="team-item position-relative">
+                <img
+                  src="{% static 'images/team/team-7.png' %}"
+                  alt="team"
+                  class="img-fluid"
+                />
+                <div class="team-img-hover"></div>
+              </div>
+              <div class="team-item-info">
+                <h5 class="mb-0">Vivek Anand</h5>
+                <span>Hr Manager</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="team-item-wrap mb-5">
+              <div class="team-item position-relative">
+                <img
+                  src="{% static 'images/team/team-5.png' %}"
+                  alt="team"
+                  class="img-fluid"
+                />
+                <div class="team-img-hover"></div>
+              </div>
+              <div class="team-item-info">
+                <h5 class="mb-0">Purushotam Kumar</h5>
+                <span>FrontEnd Developer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="team-item-wrap mb-5">
+              <div class="team-item position-relative">
+                <img
+                  src="{% static 'images/team/team-6.png' %}"
+                  alt="team"
+                  class="img-fluid"
+                />
+                <div class="team-img-hover"></div>
+              </div>
+              <div class="team-item-info">
+                <h5 class="mb-0">Priyanshu Kumar</h5>
+                <span>Enquiry Head</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="team-item-wrap mb-5">
+              <div class="team-item position-relative">
+                <img
+                  src="{% static 'images/team/team-8.png' %}"
+                  alt="team"
+                  class="img-fluid"
+                />
+                <div class="team-img-hover"></div>
+              </div>
+              <div class="team-item-info">
+                <h5 class="mb-0">Pravind Kumar</h5>
+                <span>BackEnd Lead</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section Team End -->
+
+    <section class="section testimonial bg-gray">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-7 text-center">
+            <div class="section-title">
+              <span class="h6 text-color">Employee testimonial</span>
+              <h2 class="mt-3 content-title">
+                Check what's our employee say about us
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row testimonial-wrap">
+          <div class="testimonial-item position-relative">
+            <i class="ti-quote-left text-color"></i>
+
+            <div class="testimonial-item-content">
+              <p class="testimonial-text">
+                "Working with BrainTech Technology has been an absolute
+                pleasure! Their commitment to excellence and timely delivery is
+                truly commendable. From concept to execution, they demonstrated
+                unparalleled professionalism and attention to detail. Our
+                website not only met but exceeded our expectations, thanks to
+                their innovative approach and skilled team. It's refreshing to
+                partner with a company that not only delivers on its promises
+                but goes the extra mile to ensure client satisfaction. We highly
+                recommend BrainTech Technology to anyone seeking top-notch web
+                solutions. Looking forward to future collaborations!"
+              </p>
+
+              <div class="testimonial-author">
+                <h5 class="mb-0 text-capitalize">Vishnu Kr Ghosh</h5>
+                <p>Senior Manager</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-item position-relative">
+            <i class="ti-quote-left text-color"></i>
+
+            <div class="testimonial-item-content">
+              <p class="testimonial-text">
+                Their team not only delivered a visually stunning and
+                user-friendly website but also demonstrated exceptional
+                professionalism throughout the entire process. From the initial
+                consultation to the final launch, BrainTech Technology exceeded
+                our expectations with their technical expertise, attention to
+                detail, and commitment to delivering on time. The result is a
+                website that perfectly aligns with our brand identity and has
+                significantly enhanced our online presence. We highly recommend
+                BrainTech Technology for anyone seeking top-notch web
+                development services."
+              </p>
+
+              <div class="testimonial-author">
+                <h5 class="mb-0 text-capitalize">Priyanshu Kr</h5>
+                <p>Inquiry Head</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-item position-relative">
+            <i class="ti-quote-left text-color"></i>
+
+            <div class="testimonial-item-content">
+              <p class="testimonial-text">
+                "Exceptional service! BrainTech Technology goes above and beyond
+                in ensuring timely and efficient delivery. From the intuitive
+                user interface to the seamless checkout process, every aspect is
+                thoughtfully designed for a top-notch customer experience. Their
+                commitment to excellence truly sets them apart as the best
+                delivery website company. Highly recommend for anyone looking
+                for reliability and professionalism in their online delivery
+                solutions!"
+              </p>
+
+              <div class="testimonial-author">
+                <h5 class="mb-0 text-capitalize">Ritesh Kr Thakur</h5>
+                <p>Chief Technical Officer</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-item position-relative">
+            <i class="ti-quote-left text-color"></i>
+
+            <div class="testimonial-item-content">
+              <p class="testimonial-text">
+                "At BrainTech Technology, we don't just build websites; we
+                create digital experiences. Transform your ideas into an
+                engaging online presence with our top-notch web development
+                services."
+              </p>
+
+              <div class="testimonial-author">
+                <h5 class="mb-0 text-capitalize">Vivek Anand</h5>
+                <p>HR Manager</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% include 'footer.html' %}
+
+    <!--Scroll to top-->
+    <div id="scroll-to-top" class="scroll-to-top">
+      <span class="icon fa fa-angle-up"></span>
+    </div>
+
+    <!-- 
+    Essential Scripts
+    =====================================-->
+    <!-- Main jQuery -->
+    <script src="/static/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4.3.1 -->
+    <script src="/static/plugins/bootstrap/bootstrap.min.js"></script>
+    <!--  Magnific Popup-->
+    <script src="/static/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <!-- Slick Slider -->
+    <script src="/static/plugins/slick/slick.min.js"></script>
+    <!-- Counterup -->
+    <script src="/static/plugins/counterup/jquery.waypoints.min.js"></script>
+    <script src="/static/plugins/counterup/jquery.counterup.min.js"></script>
+
+    <!-- Google Map -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"
+      defer
+    ></script>
+    <script src="plugins/google-map/map.js" defer></script>
+
+    <script src="/static/js/script.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-16523500953"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "AW-16523500953");
+    </script>
+  </body>
+</html>

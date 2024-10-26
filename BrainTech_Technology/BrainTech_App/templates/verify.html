@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>BrainTech Technology | Verify Certificate</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Verify Certificate - BrainTech Technology">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="author" content="BrainTech Technology">
+
+    {% load static %}
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+    <!-- Icon Fonts and Custom CSS -->
+    <link rel="stylesheet" href="{% static 'plugins/themify/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/fontawesome/css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+    
+    <style>
+        body {
+            background-color: #e9ecef; /* Light gray background */
+        }
+        .alert {
+            border-radius: 10px; /* Rounded corners for alerts */
+        }
+        .btn {
+            border-radius: 50px; /* Rounded buttons */
+            padding: 5px 20px; /* Adjusted button padding for a smaller button */
+            font-size: 14px; /* Slightly decreased font size */
+        }
+        .section {
+            padding: 60px 0; /* Increased padding for sections */
+        }
+        #certificate_number {
+            height: 50px; /* Increased input field height */
+            font-size: 16px; /* Increased font size for input */
+            text-align: center; /* Centered text inside the input field */
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="navigation">
+    <div class="header-top">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-2 col-md-4 text-center text-md-left">
+                    <div class="header-top-socials">
+                        <a href="https://www.facebook.com/Tech.videos.by.Ravi"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/braintech-technology/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-md-8 text-center text-md-right">
+                    <div class="header-top-info">
+                        <a href="tel:+91 9123284893">Call Us: <span>+91 9123284893</span></a>
+                        <a href="mailto:info@braintechtechnology.in"><i class="fas fa-envelope mr-2"></i>info@braintechtechnology.in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="navbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg px-0 py-4">
+                        <a class="navbar-brand" href="{% url 'home' %}">
+                            BrainTech<span>Technology</span>
+                        </a>
+
+                        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09">
+                            <span class="fa fa-bars"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarsExample09">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown">About <i class="fas fa-chevron-down small"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="{% url 'about' %}">Our Company</a></li>
+                                        <li><a class="dropdown-item" href="https://www.training.braintechtechnology.in">Training</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'career' %}">Career</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'verify_certificate' %} ">Verification</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="{% url 'service' %}">Services</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                            </ul>
+
+                            <div class="ml-lg-4 text-center">
+                                <a href="{% url 'contact' %}" class="btn btn-solid-border btn-round-full">Get a Quote</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Certificate Verification Section -->
+<section class="section bg-white mt-5 shadow-sm rounded">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="text-center mb-4">Verify Your Certificate</h2>
+
+                <!-- Form for certificate search -->
+                <form id="searchForm" method="POST" action="{% url 'verify_certificate' %}" class="form-inline justify-content-center mb-4">
+                    {% csrf_token %}
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="certificate_number" class="sr-only">Certificate Number</label>
+                        <input type="text" class="form-control" id="certificate_number" name="certificate_number" placeholder="Enter Your Id" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2" style="padding: 5px 15px; font-size: 14px; height: 35px; font-weight: 100;">Verify</button>
+
+
+                </form>
+
+                <!-- Display Results -->
+                <div id="result" class="mt-4">
+                    {% if certificate %}
+                        <div class="alert alert-success">
+                            <p><strong>Name:</strong> {{ certificate.name }}</p>
+                            <p><strong>Type:</strong> {{ certificate.type }}</p>
+                            <p><strong>Offer:</strong> {{ certificate.offer }} | Date: {{ certificate.issued }}</p>
+                            <p><strong>Issued:</strong> {{ certificate.issued }}</p>
+                            
+                            <!-- Centered Download Certificate Button -->
+                            <div class="text-center mt-3">
+                                {% if certificate.certificate_file %}
+                                    <a href="{% url 'download_certificate' certificate.certificate_number %}" class="btn btn-success">Download Certificate</a>
+                                {% else %}
+                                    <p class="alert alert-warning">Please wait a few days because your certificate is not generated yet.</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% elif error %}
+                        <div class="alert alert-danger">
+                            <p>{{ error }}</p>
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- Back to Search Button -->
+                <div class="mt-4 text-center">
+                    <a href="{% url 'verify' %}" class="btn btn-secondary">Back to Search</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="widget">
+                    <h4 class="text-capitalize mb-4">Company</h4>
+                    <ul class="list-unstyled footer-menu lh-35">
+                        <li><a href="{% url 'about' %}">Terms & Conditions</a></li>
+                        <li><a href="{% url 'about' %}">Privacy Policy</a></li>
+                        <li><a href="{% url 'contact' %}">Support</a></li>
+                        <li><a href="{% url 'contact' %}">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6">
+                <div class="widget">
+                    <h4 class="text-capitalize mb-4">Quick Links</h4>
+                    <ul class="list-unstyled footer-menu lh-35">
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'service' %}">Services</a></li>
+                        <li><a href="{% url 'career' %}">Careers</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-6">
+                <div class="widget">
+                    <h4 class="text-capitalize mb-4">Contact Us</h4>
+                    <div class="footer-contact">
+                        <p>Address: 123 Street, City, State, Country</p>
+                        <p>Email: <a href="mailto:info@braintechtechnology.in">info@braintechtechnology.in</a></p>
+                        <p>Phone: <a href="tel:+919123284893">+91 9123284893</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery and Bootstrap JS -->
+<script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'plugins/bootstrap/bootstrap.bundle.min.js' %}"></script>
+<!-- Custom JS -->
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

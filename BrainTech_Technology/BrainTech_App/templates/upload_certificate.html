@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Certificate</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+        }
+
+        .container {
+            max-width: 500px;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            border: 1px solid #007bff;
+            width: 90%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 2px solid #007bff;
+            font-size: 12px;
+            transition: border-color 0.5s ease, box-shadow 0.5s ease;
+            background-color: transparent; /* Light background for input */
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #0056b3;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+        }
+
+        .form-group label {
+            position: absolute;
+            top: 12px; 
+            left: 15px;
+            font-size: 13px;
+            color: #6c757d; 
+            pointer-events: none;
+            transition: all 0.2s ease;
+            background-color: #ffffffff; /* Background for label */
+            padding: 0 5px; /* Padding for label */
+        }
+
+        .form-group input:focus + label,
+        .form-group select:focus + label,
+        .form-group input:not(:placeholder-shown) + label,
+        .form-group select:not(:placeholder-shown) + label {
+            top: -10px; 
+            left: 10px;
+            font-size: 11px;
+            color: #007bff; 
+        }
+
+        .btn-primary {
+            width: auto;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            font-size: 14px;
+            background-color: #007bff; 
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3; 
+        }
+
+        .required {
+            color: red;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 576px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px; 
+            }
+        }
+
+        /* Error message styling */
+        .error-message {
+            color: red;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Upload Certificate</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" name="certificate_number" id="certificate_number" placeholder="" required value="{{ form.certificate_number.value }}">
+                <label for="certificate_number">Certificate Number <span class="required">*</span></label>
+            </div>
+            <div class="form-group">
+                <input type="text" name="name" id="name" placeholder=" " required value="{{ form.name.value }}">
+                <label for="name">Name <span class="required">*</span></label>
+            </div>
+
+            <div class="form-group">
+                <select name="type" id="certificate_type" required>
+                    <option value="" disabled selected>Choose Certificate Type</option>
+                    <option value="Internship" {% if form.type.value == "Internship" %}selected{% endif %}>Internship</option>
+                    <option value="Employee" {% if form.type.value == "Employee" %}selected{% endif %}>Employee</option>
+                </select>
+                <label for="certificate_type">Certificate Type <span class="required">*</span></label>
+            </div>
+
+            <div class="form-group">
+                <select name="offer" id="offer" required>
+                    <option value="" disabled selected>Has Offer Letter?</option>
+                    <option value="Yes" {% if form.offer.value == "Yes" %}selected{% endif %}>Yes</option>
+                    <option value="No" {% if form.offer.value == "No" %}selected{% endif %}>No</option>
+                </select>
+                <label for="offer">Offer Letter <span class="required">*</span></label>
+            </div>
+
+            <div class="form-group">
+                <input type="date" name="issued" id="issued" required value="{{ form.issued.value }}">
+                <label for="issued">Issued Date <span class="required">*</span></label>
+            </div>
+
+            <div class="form-group">
+                <input type="file" name="certificate_file" id="certificate_file">
+                <label for="certificate_file">Upload Certificate File (Optional)</label>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Upload</button>
+            </div>
+
+            {% if form.non_field_errors %}
+                <div class="error-message">{{ form.non_field_errors }}</div>
+            {% endif %}
+        </form>
+    </div>
+
+    <script>
+        // Validate file input before submission
+        document.querySelector('form').addEventListener('submit', function (e) {
+            var fileInput = document.getElementById('certificate_file');
+            var filePath = fileInput.value;
+            var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.pdf)$/i;
+
+            if (!fileInput.files.length) {
+                return; 
+            }
+
+            if (!allowedExtensions.exec(filePath)) {
+                alert('Please upload a file with a valid extension (jpg, jpeg, png, pdf).');
+                fileInput.value = ''; 
+                e.preventDefault(); 
+            }
+        });
+    </script>
+</body>
+
+</html>

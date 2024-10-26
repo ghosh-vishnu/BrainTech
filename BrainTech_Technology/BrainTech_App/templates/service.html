@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+
+  <!-- ** Basic Page Needs ** -->
+  <meta charset="utf-8">
+  <title>BrainTech Technology | Service</title>
+
+  <!-- ** Mobile Specific Metas ** -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Agency HTML Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Html5 Agency Template v1.0">
+
+  <!-- bootstrap.min css -->
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+  <!-- Icon Font Css -->
+  <link rel="stylesheet" href="{% static 'plugins/themify/css/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome/css/all.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/magnific-popup/magnific-popup.css' %}">
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick-theme.css' %}">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+
+</head>
+
+<body>
+  {% include 'header.html' %}
+
+<section class="page-title bg-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block text-center">
+          <span class="text-white">Our services</span>
+          <h1 class="text-capitalize mb-4 text-lg">What We Do</h1>
+          <ul class="list-inline">
+            <li class="list-inline-item"><a href="{% url 'home' %}" class="text-white">Home</a></li>
+            <li class="list-inline-item"><span class="text-white">/</span></li>
+            <li class="list-inline-item text-white-50">Our services</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--  Section Services Start -->
+<section class="section service border-top pb-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h2 class="text-9 font-weight-400">BrainTech Services</h2>
+			</div>
+		</div>
+    {% include 'footer.html' %}
+    
+    <!-- Scroll to top -->
+    <div id="scroll-to-top" class="scroll-to-top">
+      <span class="icon fa fa-angle-up"></span>
+    </div>
+    
+    
+    <!-- 
+      Essential Scripts
+      =====================================-->
+      <!-- Main jQuery -->
+      <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+      <!-- Bootstrap 4.3.1 -->
+      <script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
+      <!-- Magnific Popup -->
+      <script src="{% static 'plugins/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+      <!-- Slick Slider -->
+      <script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+      <!-- Counterup -->
+      <script src="{% static 'plugins/counterup/jquery.waypoints.min.js' %}"></script>
+      <script src="{% static 'plugins/counterup/jquery.counterup.min.js' %}"></script>
+      
+      <!-- Google Map -->
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgm7Ka2Wo1Cm1_9o9yzD4MMIMSIBKTi8g" defer></script>
+      <script src="{% static 'plugins/google-map/map.js' %}" defer></script>
+      
+      <script src="{% static 'js/script.js' %}"></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16523500953"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'AW-16523500953');
+    </script>
+    
+    
+    </body>
+    
+    </html>
